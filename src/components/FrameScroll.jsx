@@ -53,6 +53,14 @@ const FrameScroll = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [frames, currentFrame]);
 
+  // Initialize canvas size on mount
+  useEffect(() => {
+    if (canvasRef.current) {
+      canvasRef.current.width = window.innerWidth;
+      canvasRef.current.height = window.innerHeight;
+    }
+  }, []);
+
   useEffect(() => {
     if (isLoading || frames.length === 0) return;
 
