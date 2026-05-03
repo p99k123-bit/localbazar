@@ -6,7 +6,7 @@ import { useFrameLoader } from '../hooks/useFrameLoader';
 gsap.registerPlugin(ScrollTrigger);
 
 const TOTAL_FRAMES = 200;
-const FRAME_PATH = '/frames';
+const FRAME_PATH = `${import.meta.env.BASE_URL}frames`;
 
 const FrameScroll = () => {
   const containerRef = useRef(null);
