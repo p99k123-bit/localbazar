@@ -128,10 +128,10 @@ const FrameScroll2 = () => {
       <div className={`absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10 transition-opacity duration-500 ${currentFrame >= 61 ? 'opacity-0' : 'opacity-100'}`}>
         <div ref={textRef} className="text-center px-6">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-4 text-shadow-premium">
-            The Craft.
+            Domain System
           </h1>
           <p className="text-lg md:text-xl font-light text-white max-w-lg mx-auto leading-relaxed">
-            Every bottle is a masterpiece, crafted with passion and precision.
+            Separating Groceries (Local Bazaar), Professional Services, and Food domains.
           </p>
         </div>
       </div>

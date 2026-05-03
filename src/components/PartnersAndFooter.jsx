@@ -6,9 +6,9 @@ const PartnersAndFooter = () => {
       
       {/* Logos Section */}
       <div className="max-w-4xl mx-auto py-16 px-6 text-center border-b border-white/30">
-        <h3 className="text-sm font-black uppercase tracking-widest text-gray-800 mb-10">
-          We are available on
-        </h3>
+<h3 className="text-sm font-black uppercase tracking-widest text-gray-800 mb-10">
+           We serve domains
+         </h3>
         <div className="flex flex-wrap items-center justify-center gap-10 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
           <span className="text-2xl md:text-3xl font-black italic tracking-tighter">Flipkart</span>
           <span className="text-2xl md:text-3xl font-bold tracking-tight">amazon</span>
@@ -20,9 +20,9 @@ const PartnersAndFooter = () => {
       {/* Newsletter Section */}
       <div className="w-full bg-[#cbd5c0]/40 backdrop-blur-sm py-20 px-6 border-t border-white/50">
         <div className="max-w-2xl mx-auto text-center">
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-8">
-            Subscribe to our newsletter
-          </h3>
+<h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-8">
+             Join our community newsletter
+           </h3>
           <form 
             onSubmit={(e) => e.preventDefault()} 
             className="flex flex-col md:flex-row items-center justify-center gap-4 w-full"

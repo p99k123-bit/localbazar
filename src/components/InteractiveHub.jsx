@@ -5,18 +5,18 @@ import blueberryImg from '../assets/juices/blueberry.png';
 import orangeImg from '../assets/juices/orange.png'; // Will use as chocolate or orange
 
 const COLLECTIONS = [
-  { id: 1, title: 'Green Smoothies', subtitle: 'Rich in fiber\nLow GI', image: grapeImg, bgColor: 'bg-green-100/60', iconColor: 'text-green-600' },
-  { id: 2, title: 'Fruit Smoothies', subtitle: 'Rich in heart\nLow GI', image: strawberryImg, bgColor: 'bg-red-100/60', iconColor: 'text-red-600' },
-  { id: 3, title: 'Fresh Juices', subtitle: 'Rich in fiber\nDaily fit', image: blueberryImg, bgColor: 'bg-blue-100/60', iconColor: 'text-blue-600' },
-  { id: 4, title: 'Citrus Boost', subtitle: 'Rich in heart\nLow GI', image: orangeImg, bgColor: 'bg-orange-100/60', iconColor: 'text-orange-600' },
+  { id: 1, title: 'Groceries', subtitle: 'Organic snacks\nFresh produce', image: grapeImg, bgColor: 'bg-green-100/60', iconColor: 'text-green-600' },
+  { id: 2, title: 'Professional Services', subtitle: 'Plumbers, Electricians\nTutors, Tailors', image: strawberryImg, bgColor: 'bg-red-100/60', iconColor: 'text-red-600' },
+  { id: 3, title: 'Food (Coming Soon)', subtitle: 'Local kitchens\nVote for your favorite', image: blueberryImg, bgColor: 'bg-blue-100/60', iconColor: 'text-blue-600' },
+  { id: 4, title: 'Stationery', subtitle: 'Books, supplies\nFrom local vendors', image: orangeImg, bgColor: 'bg-orange-100/60', iconColor: 'text-orange-600' },
 ];
 
-const INGREDIENTS = [
-  { id: 1, title: 'Nourishing with essential vitamins and minerals', emoji: '🍓' },
-  { id: 2, title: 'Lower risk of chronic diseases', emoji: '🥝' },
-  { id: 3, title: 'Great way to curb sugar cravings', emoji: '🍏' },
-  { id: 4, title: 'Boost cardiovascular health', emoji: '🍇' },
-  { id: 5, title: 'Curb Sleep Disorders', emoji: '🥥' },
+const BENEFITS = [
+  { id: 1, title: 'Fresher Goods: No long-haul trucks', emoji: '🚚' },
+  { id: 2, title: 'Community Growth: ₹0.70 per ₹1 stays local', emoji: '🏘️' },
+  { id: 3, title: 'Eco-Friendly: Minimal packaging', emoji: '🌱' },
+  { id: 4, title: 'Click & Collect workflow', emoji: '🔄' },
+  { id: 5, title: 'Support small local businesses', emoji: '🤝' },
 ];
 
 const InteractiveHub = () => {
@@ -30,17 +30,17 @@ const InteractiveHub = () => {
             <span className="w-10 h-10 rounded-full overflow-hidden bg-gray-200 shadow-sm border border-white">
               <img src="https://i.pravatar.cc/100?img=47" alt="User" className="w-full h-full object-cover" />
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">Interactive Wellness Hub</h2>
-          </div>
-          <p className="text-sm md:text-base font-bold uppercase tracking-widest text-gray-500 mt-2">
-            Know your blend, know your wellness.
-          </p>
+<h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">Local Bazaar Hub</h2>
+           </div>
+           <p className="text-sm md:text-base font-bold uppercase tracking-widest text-gray-500 mt-2">
+             Supporting your community, one click at a time.
+           </p>
         </div>
         
         {/* Decorative Badge */}
         <div className="bg-gradient-to-r from-indigo-300 to-purple-400 rounded-2xl p-4 flex items-center gap-4 text-white shadow-lg rotate-2 hover:rotate-0 transition-all cursor-pointer">
-          <div className="text-sm font-bold opacity-80 uppercase tracking-widest">Choose Your Flavor</div>
-          <div className="text-2xl font-black italic">Smoothie Shop</div>
+<div className="text-sm font-bold opacity-80 uppercase tracking-widest">Explore Domains</div>
+           <div className="text-2xl font-black italic">Local Bazaar</div>
         </div>
       </div>
 
@@ -98,7 +98,7 @@ const InteractiveHub = () => {
           </div>
 
           <div className="flex flex-col gap-5">
-            {INGREDIENTS.map((item) => (
+            {BENEFITS.map((item) => (
               <div key={item.id} className="flex items-center gap-4 p-3 rounded-2xl hover:bg-white/60 transition-colors cursor-pointer group">
                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                   {item.emoji}
