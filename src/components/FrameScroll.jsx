@@ -128,12 +128,12 @@ const FrameScroll = () => {
       {/* Premium UI Overlay */}
       <div className={`absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10 transition-opacity duration-500 ${currentFrame >= 61 ? 'opacity-0' : 'opacity-100'}`}>
         <div ref={textRef} className="text-center px-6">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white  mb-4 text-shadow-premium">
-            Local Bazaar
-          </h1>
-          <p className="text-lg md:text-xl font-light text-white max-w-lg mx-auto leading-relaxed">
-            Hyperlocal e-commerce ecosystem designed to digitize small businesses.
-          </p>
+<h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white  mb-4 text-shadow-premium">
+             Local Bazaar
+           </h1>
+           <p className="text-lg md:text-xl font-light text-white max-w-lg mx-auto leading-relaxed">
+             Hyperlocal e-commerce ecosystem designed to digitize small businesses.
+           </p>
         </div>
       </div>
 

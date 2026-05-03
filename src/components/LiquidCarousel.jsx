@@ -9,7 +9,7 @@ import strawberryImg from '../assets/juices/strawberry.png';
 import grapeImg from '../assets/juices/grape.png';
 import orangeImg from '../assets/juices/orange.png';
 
-const LOCAL_BAZAAR_DATA = [
+const JUICE_DATA = [
   { id: 1, name: 'Andhra Naturals', type: 'Organic Shop', desc: 'Ravi sources organic Anjeer and Avisa Laddus directly from farmers for 10 years.', image: cherryImg, color: '#6db33f' },
   { id: 2, name: 'Bharathis Book and Beyond', type: 'Stationery', desc: 'Curated stationery and books covering all educational and office needs.', image: blueberryImg, color: '#4a7230' },
   { id: 3, name: 'Professional Services', type: 'Plumbers, Electricians, Tutors', desc: 'Verified local experts for your home and personal needs. Just a click away.', image: strawberryImg, color: '#2563eb' },
@@ -37,7 +37,7 @@ const LiquidCarousel = () => {
     if (isAnimating || nextIndex === activeIndex) return;
     setIsAnimating(true);
     
-    const nextColor = LOCAL_BAZAAR_DATA[nextIndex].color;
+    const nextColor = JUICE_DATA[nextIndex].color;
     const tl = gsap.timeline({
       onComplete: () => setIsAnimating(false)
     });
@@ -68,14 +68,14 @@ const LiquidCarousel = () => {
   useEffect(() => {
     if (!isHovered && !isAnimating) {
       autoPlayRef.current = setInterval(() => {
-        triggerTransition((activeIndex + 1) % LOCAL_BAZAAR_DATA.length);
+        triggerTransition((activeIndex + 1) % JUICE_DATA.length);
       }, 3000);
     }
     return () => clearInterval(autoPlayRef.current);
   }, [activeIndex, isHovered, isAnimating, triggerTransition]);
 
-  const handlePrev = () => triggerTransition((activeIndex - 1 + LOCAL_BAZAAR_DATA.length) % LOCAL_BAZAAR_DATA.length);
-  const handleNext = () => triggerTransition((activeIndex + 1) % LOCAL_BAZAAR_DATA.length);
+  const handlePrev = () => triggerTransition((activeIndex - 1 + JUICE_DATA.length) % JUICE_DATA.length);
+  const handleNext = () => triggerTransition((activeIndex + 1) % JUICE_DATA.length);
 
   return (
     <main className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-[#f8f8f8]">
@@ -83,7 +83,7 @@ const LiquidCarousel = () => {
       {/* Dynamic Background Glow */}
       <div 
         className="absolute inset-0 opacity-20 transition-colors duration-1000"
-        style={{ background: `radial-gradient(circle at center, ${LOCAL_BAZAAR_DATA[activeIndex].color}, transparent 70%)` }}
+        style={{ background: `radial-gradient(circle at center, ${JUICE_DATA[activeIndex].color}, transparent 70%)` }}
       />
 
       {/* GSAP Liquid Layer */}
@@ -97,16 +97,16 @@ const LiquidCarousel = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="relative flex items-center justify-center h-[500px] mt-[40px]">
-          {LOCAL_BAZAAR_DATA.map((item, index) => {
+          {JUICE_DATA.map((juice, index) => {
             const isCenter = index === activeIndex;
-            const isLeft = index === (activeIndex - 1 + LOCAL_BAZAAR_DATA.length) % LOCAL_BAZAAR_DATA.length;
-            const isRight = index === (activeIndex + 1) % LOCAL_BAZAAR_DATA.length;
+            const isLeft = index === (activeIndex - 1 + JUICE_DATA.length) % JUICE_DATA.length;
+            const isRight = index === (activeIndex + 1) % JUICE_DATA.length;
             
             if (!isCenter && !isLeft && !isRight) return null;
 
             return (
               <motion.div
-                key={item.id}
+                key={juice.id}
                 initial={false}
                 onClick={() => {
                   if (!isCenter) triggerTransition(index);
@@ -130,8 +130,8 @@ const LiquidCarousel = () => {
                     <motion.img 
                       animate={isCenter ? { y: [0, -10, 0] } : {}}
                       transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                      src={item.image} 
-                      alt={item.name}
+                      src={juice.image} 
+                      alt={juice.name}
                       className="h-[260px] object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)]"
                     />
                   </div>
@@ -139,7 +139,7 @@ const LiquidCarousel = () => {
                   {/* Product Info */}
                   <div className="text-center">
                     <h3 className={`text-2xl font-black mb-1 transition-colors duration-500 ${isCenter ? 'text-gray-900' : 'text-gray-400'}`}>
-                      {item.name}
+                      {juice.name}
                     </h3>
 
                     <div className="relative h-24 flex items-center justify-center overflow-hidden">
@@ -152,7 +152,7 @@ const LiquidCarousel = () => {
                             exit={{ opacity: 0, y: -10, filter: 'blur(5px)' }}
                             className="text-gray-500 text-sm leading-relaxed max-w-[280px]"
                           >
-                            {item.desc}
+                            {juice.desc}
                           </motion.p>
                         ) : (
                           <motion.div
@@ -162,7 +162,7 @@ const LiquidCarousel = () => {
                             exit={{ opacity: 0, y: -10 }}
                             className="flex flex-col"
                           >
-                            <span className="text-gray-400 uppercase tracking-widest text-[10px] font-bold">{item.type}</span>
+                            <span className="text-gray-400 uppercase tracking-widest text-[10px] font-bold">{juice.type}</span>
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -181,12 +181,12 @@ const LiquidCarousel = () => {
           <div className="flex items-center gap-12">
             <button onClick={handlePrev} className="text-gray-300 hover:text-black transition-colors text-2xl font-light">←</button>
             <div className="flex gap-3">
-              {LOCAL_BAZAAR_DATA.map((_, i) => (
+              {JUICE_DATA.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => triggerTransition(i)}
                   className={`h-1.5 rounded-full transition-all duration-500 ${i === activeIndex ? 'w-10' : 'w-2 bg-gray-200'}`}
-                  style={{ backgroundColor: i === activeIndex ? LOCAL_BAZAAR_DATA[i].color : '' }}
+                  style={{ backgroundColor: i === activeIndex ? JUICE_DATA[i].color : '' }}
                 />
               ))}
             </div>

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const TESTIMONIALS = [
+const REVIEWS = [
   { 
     id: 1, 
     text: "Since joining Local Bazaar, my organic snacks reach more customers without delivery hassles. The Click & Collect model works great!", 
@@ -53,19 +53,19 @@ const Testimonials = () => {
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 flex-1">
-          {TESTIMONIALS.map((review, index) => (
+          {REVIEWS.map((review, index) => (
             <motion.div 
-              key={testimonial.id} 
+              key={review.id} 
               style={{ y: transforms[index] }}
               className="bg-white/40 backdrop-blur-md rounded-3xl p-8 border border-white/60 shadow-lg flex flex-col items-center text-center relative mt-8 hover:-translate-y-2 transition-transform duration-300"
             >
               {/* User Avatar - Overlapping top */}
               <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border-4 border-[#f0f9f1] overflow-hidden shadow-sm">
-                <img src={testimonial.image} alt="User" className="w-full h-full object-cover" />
+                <img src={review.image} alt="User" className="w-full h-full object-cover" />
               </div>
               
               <p className="text-sm text-gray-600 font-medium leading-relaxed italic mb-6">
-                "{testimonial.text}"
+                "{review.text}"
               </p>
               
 

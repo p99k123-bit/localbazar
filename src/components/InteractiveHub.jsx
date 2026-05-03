@@ -11,7 +11,7 @@ const COLLECTIONS = [
   { id: 4, title: 'Stationery', subtitle: 'Books, supplies\nFrom local vendors', image: orangeImg, bgColor: 'bg-orange-100/60', iconColor: 'text-orange-600' },
 ];
 
-const BENEFITS = [
+const INGREDIENTS = [
   { id: 1, title: 'Fresher Goods: No long-haul trucks', emoji: '🚚' },
   { id: 2, title: 'Community Growth: ₹0.70 per ₹1 stays local', emoji: '🏘️' },
   { id: 3, title: 'Eco-Friendly: Minimal packaging', emoji: '🌱' },
@@ -98,7 +98,7 @@ const InteractiveHub = () => {
           </div>
 
           <div className="flex flex-col gap-5">
-            {BENEFITS.map((item) => (
+            {INGREDIENTS.map((item) => (
               <div key={item.id} className="flex items-center gap-4 p-3 rounded-2xl hover:bg-white/60 transition-colors cursor-pointer group">
                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                   {item.emoji}

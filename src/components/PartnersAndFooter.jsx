@@ -4,18 +4,26 @@ const PartnersAndFooter = () => {
   return (
     <div className="w-full relative mt-10">
       
-      {/* Logos Section */}
-      <div className="max-w-4xl mx-auto py-16 px-6 text-center border-b border-white/30">
-<h3 className="text-sm font-black uppercase tracking-widest text-gray-800 mb-10">
-           We serve domains
+{/* Services Section */}
+       <div className="max-w-4xl mx-auto py-16 px-6 text-center border-b border-white/30">
+         <h3 className="text-sm font-black uppercase tracking-widest text-gray-800 mb-10">
+           Our Services
          </h3>
-        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          <span className="text-2xl md:text-3xl font-black italic tracking-tighter">Flipkart</span>
-          <span className="text-2xl md:text-3xl font-bold tracking-tight">amazon</span>
-          <span className="text-xl md:text-2xl font-black text-blue-800 uppercase">Walmart ★</span>
-          <span className="text-2xl md:text-3xl font-bold text-red-500 tracking-tighter">ebay</span>
-        </div>
-      </div>
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+           <div className="p-6 bg-white/60 rounded-2xl shadow-sm">
+             <h4 className="font-bold text-gray-800">Services</h4>
+           </div>
+           <div className="p-6 bg-white/60 rounded-2xl shadow-sm">
+             <h4 className="font-bold text-gray-800">Food</h4>
+           </div>
+           <div className="p-6 bg-white/60 rounded-2xl shadow-sm">
+             <h4 className="font-bold text-gray-800">E-Commerce</h4>
+           </div>
+           <div className="p-6 bg-white/60 rounded-2xl shadow-sm">
+             <h4 className="font-bold text-gray-800">Live</h4>
+           </div>
+         </div>
+       </div>
 
       {/* Newsletter Section */}
       <div className="w-full bg-[#cbd5c0]/40 backdrop-blur-sm py-20 px-6 border-t border-white/50">

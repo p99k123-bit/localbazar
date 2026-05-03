@@ -5,7 +5,7 @@ import strawberryImg from '../assets/juices/strawberry.png';
 import grapeImg from '../assets/juices/grape.png';
 import orangeImg from '../assets/juices/orange.png';
 
-const VENDORS = [
+const PRODUCTS = [
   { id: 1, name: 'Andhra Naturals', image: cherryImg, type: 'Organic Shop' },
   { id: 2, name: 'Bharathis Book and Beyond', image: blueberryImg, type: 'Stationery' },
   { id: 3, name: 'Local Plumbers', image: strawberryImg, type: 'Professional Service' },
@@ -31,7 +31,7 @@ const WellnessProducts = () => {
   return (
     <div className="w-full max-w-7xl mx-auto pt-20 px-6">
       <div className="flex items-center justify-between border-b border-gray-300 pb-4 mb-10">
-        <h2 className="text-3xl font-black text-gray-800 tracking-tight">Community Partners</h2>
+        <h2 className="text-3xl font-black text-gray-800 tracking-tight">Our Products</h2>
         <div className="flex gap-4">
           <button 
             onClick={scrollLeft}
@@ -53,9 +53,9 @@ const WellnessProducts = () => {
         className="flex gap-6 overflow-x-auto hide-scrollbar pb-10"
         style={{ scrollSnapType: 'x mandatory' }}
       >
-        {VENDORS.map((prod) => (
+        {PRODUCTS.map((prod) => (
           <div 
-            key={vendor.id} 
+            key={prod.id} 
             className="min-w-[280px] bg-white/40 backdrop-blur-md border border-white/50 rounded-3xl p-6 shadow-xl flex flex-col items-center group cursor-pointer"
             style={{ scrollSnapAlign: 'start' }}
           >
@@ -63,14 +63,14 @@ const WellnessProducts = () => {
               {/* Product Background Circle */}
               <div className="absolute inset-0 bg-white/50 rounded-full scale-75 group-hover:scale-90 transition-transform duration-500" />
               <img 
-                src={vendor.image} 
-                alt={vendor.name} 
+                src={prod.image} 
+                alt={prod.name} 
                 className="relative z-10 object-contain h-full group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 drop-shadow-xl"
               />
             </div>
             
-<h3 className="text-lg font-bold text-gray-800 mb-1">{vendor.name}</h3>
-             <p className="text-gray-500 font-medium mb-4">{vendor.type}</p>
+<h3 className="text-lg font-bold text-gray-800 mb-1">{prod.name}</h3>
+             <p className="text-gray-500 font-medium mb-4">{prod.type}</p>
              
              <button className="w-full py-3 rounded-full bg-[#6db33f] hover:bg-[#5a9c32] text-white font-bold text-sm tracking-wider uppercase transition-colors shadow-md">
                View Details
